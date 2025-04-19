@@ -15,17 +15,17 @@ export default function HomePage() {
     <>
       <div>
         <Header />
-        <main className="flex flex-col gap-20 pb-20">
+        <main className="flex flex-col gap-[60px] lg:gap-20 pt-2 pb-20 mt-[78px]">
           <Hero />
           <About />
           <Teachers />
-          <Courses />
+          {/* <Courses />
           <Community />
           <Comments />
           <Contact /> 
-          <AccordionSection />
+          <AccordionSection /> */}
         </main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
