@@ -65,26 +65,21 @@ export default function Teachers() {
 
   return (
     <div className="container">
-      <p className="font-semibold text-[40px] leading-[150%] text-center pb-[60px]">Bizning tajribali <span className="italic text-[#D32F2F]">o’qituvchilarimiz</span> bilan tanishing!</p>
+      <p className="font-semibold text-[32px] lg:text-[40px] leading-[150%] text-center pb-6 lg:pb-[60px]">Bizning tajribali <span className="italic text-[#D32F2F]">o’qituvchilarimiz</span> bilan tanishing!</p>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={30}
+        spaceBetween={20}
         loop={true}
-        slidesPerView={1}
+        slidesPerView='auto'
+        centeredSlides={true}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
         breakpoints={{
-          640: {
-            slidesPerView: 2,
-          },
-          900: {
-            slidesPerView: 3,
-          },
-          1200: {
-            slidesPerView: 4,
-          },
+          768: {
+            centeredSlides: false
+          }
         }}
         pagination={{ clickable: true }}
         onInit={(swiper) => {
@@ -99,19 +94,21 @@ export default function Teachers() {
             key={item.id}
             className="cursor-pointer"
             style={{
-              height: "500px",
-              width: "100%",
+              height: "479px",
+              width: "295px",
+              maxWidth: "295px",
+              flexShrink: 0
             }}
           >
             <div className="">
               <img
                 src={item.img}
-                className="w-full h-full object-contain rounded-lg swiper-img"
+                className="w-full h-full object-contain leading-[100%] rounded-lg swiper-img"
                 alt=""
               />
             </div>
             <p className="text-[28px] font-semibold">{item.name}</p>
-            <p className="text-lg text-[#4D4D4D] leading-[150%] line-clamp-3 overflow-hidden">
+            <p className="text-base md:text-lg text-[#4D4D4D] leading-[150%] line-clamp-3 overflow-hidden">
               {item.desc}
             </p>
           </SwiperSlide>
