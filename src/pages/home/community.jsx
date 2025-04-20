@@ -7,7 +7,7 @@ import "swiper/css/pagination";
 import Sw1 from "../../assets/comunity.png";
 import Sw2 from "../../assets/comunity.png";
 import Sw3 from "../../assets/comunity.png";
-import Linkedin from "../../assets/linkedin.png"
+import Linkedin from "../../assets/linkedin.png";
 
 const items = [
   {
@@ -64,28 +64,23 @@ export default function Community() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
   return (
-    <div className="px-10">
+    <div className="md:px-4 lg:px-10">
       <p className="font-semibold text-[40px] leading-[150%] text-center pb-6">
         Bizning jamoa
       </p>
       <Swiper
         modules={[Navigation]}
-        spaceBetween={30}
+        spaceBetween={20}
         loop={true}
-        slidesPerView={1}
+        slidesPerView="auto"
+        centeredSlides={true}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
         breakpoints={{
-          640: {
-            slidesPerView: 3,
-          },
-          900: {
-            slidesPerView: 4,
-          },
-          1200: {
-            slidesPerView: 5,
+          630: {
+            centeredSlides: false,
           },
         }}
         pagination={{ clickable: true }}
@@ -102,7 +97,9 @@ export default function Community() {
             className="cursor-pointer bg-[#F9F9F9] rounded-2xl overflow-hidden"
             style={{
               height: "315px",
-              width: "100%",
+              width: "256px",
+              maxWidth: "295px",
+              flexShrink: 0
             }}
           >
             <div className="">

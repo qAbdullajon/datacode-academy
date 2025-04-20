@@ -100,7 +100,7 @@ export default function Teachers() {
               flexShrink: 0
             }}
           >
-            <div className="">
+            <div>
               <img
                 src={item.img}
                 className="w-full h-full object-contain leading-[100%] rounded-lg swiper-img"
