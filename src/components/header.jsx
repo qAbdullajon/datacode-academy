@@ -33,43 +33,47 @@ export default function Header() {
   return (
     <>
       {/* HEADER */}
-      <div className="fixed top-0 left-1/2 transform -translate-x-1/2 z-20 bg-white w-[85%] py-[15px] flex items-center justify-between">
-        {/* Logo */}
-        <NavLink to={"/"} className="flex items-center gap-3 !bg-transparent">
-          <img src={Logo} width={32} alt="logo" />
-          <p className="text-lg font-semibold text-black leading-[22px]">
-            DataCode <br /> Academy
-          </p>
-        </NavLink>
+      <div className="fixed w-full top-0 left-1/2 transform -translate-x-1/2 z-20 bg-white py-[15px]">
+        <div className="w-[85%] mx-auto flex items-center justify-between">
+          <NavLink to={"/"} className="flex items-center gap-3 !bg-transparent">
+            <img src={Logo} width={32} alt="logo" />
+            <p className="text-lg font-semibold text-black leading-[22px]">
+              DataCode <br /> Academy
+            </p>
+          </NavLink>
 
-        {/* Navbar (desktop) */}
-        <nav className="items-center gap-10 hidden lg:flex">
-          {navList.map((item) => (
-            <NavLink
-              key={item.id}
-              className={`text-xl text-black !bg-transparent hover:text-black ${
-                item.path === location.pathname ? "font-bold" : ""
-              }`}
-              to={item.path}
-            >
-              {item.name}
-            </NavLink>
-          ))}
-        </nav>
+          {/* Navbar (desktop) */}
+          <nav className="items-center gap-10 hidden lg:flex">
+            {navList.map((item) => (
+              <NavLink
+                key={item.id}
+                className={`text-xl text-black !bg-transparent hover:text-black ${
+                  item.path === location.pathname ? "font-bold" : ""
+                }`}
+                to={item.path}
+              >
+                {item.name}
+              </NavLink>
+            ))}
+          </nav>
 
-        {/* Login */}
-        <button className="hidden lg:block border-2 border-[#D32F2F] px-10 py-[10px] rounded-xl">
-          Kirish
-        </button>
+          {/* Login */}
+          <button className="hidden lg:block border-2 border-[#D32F2F] px-10 py-[10px] rounded-xl">
+            Kirish
+          </button>
 
-        {/* Mobile menu icon */}
-        <button onClick={() => setIsOpen(!isOpen)} className="lg:hidden z-30">
-          <Menu />
-        </button>
+          {/* Mobile menu icon */}
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden bg-red-100 p-3 z-30"
+          >
+            <Menu />
+          </button>
+        </div>
       </div>
 
       <div
-        className={`bg-white shadow-md flex justify-between flex-col pb-8 w-full fixed left-0 transition-all duration-75 ease-in-out z-10 ${
+        className={`bg-white shadow-md flex justify-between flex-col pb-8 w-full fixed left-0 transition-all duration-300 ease-in-out z-10 ${
           isOpen ? "top-[78px] h-[calc(100vh-78px)]" : "-top-96"
         }`}
       >

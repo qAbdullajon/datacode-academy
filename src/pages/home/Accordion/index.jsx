@@ -4,7 +4,7 @@ import Accordion from "./accordion";
 export default function AccordionSection() {
   return (
     <div className="container">
-      <p className="font-semibold text-[40px] leading-[150%] text-center pb-10">
+      <p className="font-semibold text-[32px] md:text-[40px] leading-[100%] md:leading-[150%] text-center pb-8 md:pb-10">
         Ko’p so’raladigan{" "}
         <span className="text-[#D32F2E] italic">savollar</span>
       </p>

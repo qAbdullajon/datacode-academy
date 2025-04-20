@@ -19,13 +19,13 @@ export default function HomePage() {
           <Hero />
           <About />
           <Teachers />
-          {/* <Courses />
+          <Courses />
           <Community />
           <Comments />
           <Contact /> 
-          <AccordionSection /> */}
+          <AccordionSection />
         </main>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </>
   );
